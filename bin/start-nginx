@@ -1,0 +1,12 @@
+#!/bin/sh
+
+# Create required directories
+mkdir -p $HOME/logs
+mkdir -p $HOME/nginx/conf
+
+# Copy nginx config into the expected location
+cp -r config/* $HOME/nginx/conf/
+
+# Start nginx
+nginx -p $HOME -c nginx.conf.erb
+
